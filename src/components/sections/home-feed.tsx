@@ -34,6 +34,17 @@ const phoneHref = phoneLink?.href ?? "tel:2407268961";
 const emailHref = emailLink?.href ?? "mailto:bpranay0703@gmail.com";
 const linkedinHref = linkedinLink?.href ?? "https://www.linkedin.com/in/venkata-pranay-bathini";
 
+const isGithubActions = process.env.GITHUB_ACTIONS === "true";
+const [repositoryOwner = "", repositoryName = ""] = (process.env.GITHUB_REPOSITORY ?? "").split("/");
+const isUserSiteRepo =
+  !!repositoryOwner &&
+  repositoryName.toLowerCase() === `${repositoryOwner.toLowerCase()}.github.io`;
+const pagesBasePath = isGithubActions && repositoryName && !isUserSiteRepo ? `/${repositoryName}` : "";
+
+function withPagesBasePath(path: string) {
+  return `${pagesBasePath}${path}`;
+}
+
 function getFooterLinkText(label: string) {
   if (label === "Phone") return "(240)726-8961";
   if (label === "Email") return "bpranay0703@gmail.com";
@@ -51,15 +62,15 @@ function getInlineLogo(value: string): InlineLogo | null {
   const normalized = value.toLowerCase();
 
   if (normalized.includes("maryland")) {
-    return { src: "/logos/umd.png", alt: "University of Maryland logo" };
+    return { src: withPagesBasePath("/logos/umd.png"), alt: "University of Maryland logo" };
   }
 
   if (normalized.includes("pes")) {
-    return { src: "/logos/pes.png", alt: "PES University logo" };
+    return { src: withPagesBasePath("/logos/pes.png"), alt: "PES University logo" };
   }
 
   if (normalized.includes("ieee")) {
-    return { src: "/logos/ieee.png", alt: "IEEE logo" };
+    return { src: withPagesBasePath("/logos/ieee.png"), alt: "IEEE logo" };
   }
 
   return null;
