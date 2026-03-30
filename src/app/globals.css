@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --text-main: rgb(18, 18, 18);
+  --text-secondary: rgb(126, 126, 126);
+  --dash-border: rgb(232, 232, 232);
+  --pill-border: rgb(227, 225, 225);
+  --pill-background: rgb(250, 250, 250);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--text-main);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text-main);
+  font-family: var(--font-inter), sans-serif;
+}
+
+::selection {
+  background: rgba(18, 18, 18, 0.12);
+  color: var(--text-main);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link-with-arrow::after {
+  content: "\2197";
+  opacity: 0;
+  display: inline-block;
+  margin-left: 0.2rem;
+  font-size: 0.72em;
+  font-weight: 700;
+  line-height: 1;
+  transform: translateX(-0.14rem);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.link-with-arrow:hover::after,
+.link-with-arrow:focus-visible::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

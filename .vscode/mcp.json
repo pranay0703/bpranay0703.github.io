@@ -1,0 +1,21 @@
+{
+	"servers": {
+		"Figma": {
+			"url": "https://mcp.figma.com/mcp",
+			"type": "http"
+		},
+		"my-mcp-server-7f31f938": {
+			"url": "https://mcp.unframer.co/mcp?id=423ec2b3e635a7f03f871f3e0d7d896da8d99bac1c573c6a1674c4e29fc412c9&secret=4KfVdXy65guZus2piqIxOLDfT4qxl3lg",
+			"type": "http"
+		},
+		"my-mcp-server-0e1acfad": {
+			"url": "https://mcp.unframer.co/mcp?id=423ec2b3e635a7f03f871f3e0d7d896da8d99bac1c573c6a1674c4e29fc412c9&secret=lEbDeI6NE3JLRFapUTLoCkOWFAHxPCnQ",
+			"type": "http"
+		},
+		"my-mcp-server-69933145": {
+			"url": "https://mcp.unframer.co/mcp?id=423ec2b3e635a7f03f871f3e0d7d896da8d99bac1c573c6a1674c4e29fc412c9&secret=lEbDeI6NE3JLRFapUTLoCkOWFAHxPCnQ",
+			"type": "http"
+		}
+	},
+	"inputs": []
+}
